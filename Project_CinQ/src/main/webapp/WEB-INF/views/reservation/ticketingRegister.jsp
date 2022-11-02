@@ -23,10 +23,11 @@
 </head>
 <body>
    <c:import url="../default/header.jsp"/>
+   <h1>예매창</h1>
      	<div id="reservationForm">
  			<b>공연장소</b>&nbsp;
  			<input type="hidden" id=register_no value="${data.write_no}">
- 			<button type="button" onclick="rentOkView()">대관가능 장소보기</button><br><br>
+ 			<button type="button" onclick="registOkView()">대관가능 장소보기</button><br><br>
  			<button type="button" onclick="location.href='ticketingRegister?write_no=${data.write_no}'">취소</button><br><br>
  			<br><br>
 			<form  id="form" class="ticketingRegisterForm"  action="${contextPath }/reservation/ticketingStart?write_no=${data.write_no}" enctype="multipart/form-data" method="post"> 
@@ -39,20 +40,16 @@
 					<b>장소를 추천받고 싶어요</b><br><br>
 				</c:if>
 				<c:if test="${data.location != 0}">
-					<b>장 소</b>
-						<input type="hidden" name="location"  value="${data.location}">
-					<c:if test="${placeData != null}">
-					<input type="hidden" id="location" name="location" value="${placeData.write_no}">
-					<b>장소</b><br>
-						<c:if test="${placeData.image == 'nan'}">
-		       				<b>이미지가 없습니다..</b><br>
-		        		</c:if>
-		        		<c:if test="${placeData.image != 'nan'}">
-		        			<img src="${contextPath}/place/download?imageFileName=${placeData.image}" width="200px" height="200px"><br>
-		        		</c:if>
-		        	<b>지역 : ${placeData.loc_sep_name}</b><br>
-		        	<b>장소명 : ${placeData.loc_name} </b><br><br>
-					</c:if>				
+				<input type="hidden" id="location" name="location" value="${placeData.write_no}">
+				<b>장소</b><br>
+				<c:if test="${placeData.image == 'nan'}">
+		       		 <b>이미지가 없습니다..</b><br>
+		        </c:if>
+		        <c:if test="${placeData.image != 'nan'}">
+		        <img src="${contextPath}/place/download?imageFileName=${placeData.image}" width="200px" height="200px"><br>
+		        </c:if>
+		        <b>지역 : ${placeData.loc_sep_name}</b><br>
+		        <b>장소명 : ${placeData.loc_name} </b><br><br>
 				</c:if>
 				<b>팀 프로필</b>
 				<c:if test="${data.image == 'nan'}">
@@ -78,7 +75,7 @@
 			 	<b>공연팀인원</b>
 	         		<input type="number" min="0" max="100" name="team_count" value="${data.team_count}"/>      
 	         	<br><br>
-         			<input type="submit" value="제출하기">
+         			<input type="submit" value="예매시작">
 			 </form>
    		<button type="button" onclick="location.href='reservation/reservationAllListNum'">돌아가기</button>
    	</div>

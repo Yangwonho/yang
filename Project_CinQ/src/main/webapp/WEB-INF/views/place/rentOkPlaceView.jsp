@@ -53,33 +53,17 @@ td {
                 <td>${dto.loc_sep_name}</td>
 				<td>${dto.content}</td>
 	            <td>
-	            <c:if test="${loginUser != 'admin' }">
 	            	<input type="hidden" id="place_no" value="${dto.write_no} ">
 	            	<input type="button" value="신청하기" onclick="placeSubmit()">
-	            </c:if>
-	            <c:if test="${loginUser == 'admin' }">
-	            	<input type="hidden" id="register_no" value="${register_no}">
-	            	<input type="hidden" id="place_no" value="${dto.write_no} ">
-	            	<input type="button" value="등록하기" onclick="placeRegist()">
-	            </c:if>
 	            </td>
             </tr>
       </c:forEach>
 	      <tr>
-	         <c:if test="${loginUser != 'admin' }">
 		         <td colspan="6" align="center">
 		             <c:forEach var="num" begin="1" end="${repeat}">
 		                 <a href="rentOkPlaceView?num=${num}">[${num}]</a>
 		             </c:forEach>
 		         </td>
-	         </c:if>
-	          <c:if test="${loginUser == 'admin' }">
-		         <td colspan="6" align="center">
-		             <c:forEach var="num" begin="1" end="${repeat}">
-		                 <a href="rentOkPlaceView?register=${register_no}&num=${num}">[${num}]</a>
-		             </c:forEach>
-		         </td>
-	         </c:if>
 	     </tr>
      </table>
      </div>

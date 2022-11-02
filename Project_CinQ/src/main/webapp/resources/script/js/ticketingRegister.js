@@ -1,10 +1,9 @@
 /* js/reservation.js */
 
-function rentOkView() {
-	var register_no = $("#register_no").val();
-	var url = '/root/place/rentOkPlaceView?register_no='+register_no;
+function registOkView() {
+	var url = '/root/place/registOkPlaceView';
 	var popOpt = 'width=600px, height=300px, top=300px, left=1200px';
-	
+
 	window.open(url,'pop',popOpt);
 	
 }
@@ -12,8 +11,6 @@ function rentOkView() {
 
 function placeRegist() {
 	var place_no = $("#place_no").val();
-	var register_no = $("#register_no").val().trim();
-	window.opener.location.href="../reservation/ticketingRegister?write_no="+register_no+"&place_no="+place_no;
+	window.opener.location.href="../reservation/ticketingRegister";
 	window.close();
-	
 }

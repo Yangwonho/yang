@@ -105,17 +105,18 @@ public class PlaceController implements MemberSession{
 			 ps.PlaceSearchList(loc_sep_name, model, num);
 			 return "place/placeSearchList";
 		}
+	 
 	 @RequestMapping("rentOkPlaceView")
-	 public String rentOkPlaceView(Model model,@RequestParam(value = "register_no", required = false) String register_no ,@RequestParam(value = "num", required = false, defaultValue="1") int num) {
-		 if(register_no == null) {
+	 public String rentOkPlaceView(Model model,@RequestParam(value = "num", required = false, defaultValue="1") int num) {
 			 ps.RentOkPlaceView(model, num);
 			 return "place/rentOkPlaceView";
-		 }
-		 	ps.RentOkPlaceView(model, num, register_no);
-		 	return "place/rentOkPlaceView";
-		 
 	 }
 
+	 @RequestMapping("registOkPlaceView")
+	 public String registOkPlaceView(Model model,@RequestParam(value = "num", required = false, defaultValue="1") int num) {
+			 ps.RentOkPlaceView(model, num);
+			 return "place/registOkPlaceView";
+	 }
 }
 
 

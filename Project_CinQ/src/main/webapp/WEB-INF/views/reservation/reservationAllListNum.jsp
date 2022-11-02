@@ -97,7 +97,7 @@ div {text-align:center;}
                 <td><button type="button" onclick="location.href='${contextPath}/place/placeView?write_no=${dto.location}'">${dto.location}</button></td>
 				</c:if>
 				<td>${dto.content}</td>
-				<td><button type="button" onclick="location.href='${contextPath}/reservation/ticketingRegister?write_no=${dto.write_no}'">예매등록</button></td>
+				<td><button type="button" onclick="location.href='${contextPath}/reservation/ticketingRegister?write_no=${dto.write_no}&location=${dto.location}'">예매등록</button></td>
 				<td><button type="button" onclick="location.href='${contextPath}/reservation/reservationDelete?write_no=${dto.write_no}&imageFileName=${data.image}'">삭제</button></td>
             </tr>
       </c:forEach>

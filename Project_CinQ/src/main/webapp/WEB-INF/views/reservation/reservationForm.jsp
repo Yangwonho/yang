@@ -21,6 +21,7 @@
  <c:import url="../default/header.jsp"/>
  	
  	<div id="reservationForm">
+ 	<h1>관리자한테 요청하는 창</h1>
  		<b>공연장소</b>&nbsp;
 		<button type="button" onclick="rentOkView()">대관가능 장소보기</button><br><br>
  		<button type="button" onclick="location.href='reservationForm'">취소</button><br><br>
@@ -30,7 +31,7 @@
 	        <input type="text" name="id" value= "${loginUser}" readonly><br><br>
 	        <b>제 목</b>
 	        <input type="text" name="title" size="50"><br><br>
-			<br><br>
+			<br><br>	
 			<c:if test="${placeData != null}">
 				<input type="hidden" id="location" name="location" value="${placeData.write_no}">
 				<b>장소</b><br>
