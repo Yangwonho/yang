@@ -48,26 +48,26 @@
 				장소추천받을게요 <input type="checkbox" id="location" name="location" value="0" checked="checked"><br><br>
 			</c:if>
 	        <b>팀 프로필 올리기</b><br>
-	        <img src="#" id="preview" width="350px" height="250px"><br>
-	        <input type="file" name="image" value="팀원프로필" onchange="readURL(this)"><br><br>
+	        	<img src="#" id="preview" width="350px" height="250px"><br>
+	        	<input type="file" name="image" value="팀원프로필" onchange="readURL(this)"><br><br>
 	        <b>공연날짜</b>
 	        <p>생각하시는 공연날짜를 입력해 주세요 </p>
-	        <input type="date" id="start_date" name="start_date"> ~ 
-	        <input type="date" id="end_date" name="end_date"><br><br>
+	        	<input type="date" id="start_date" name="start_date"> ~ 
+	        	<input type="date" id="end_date" name="end_date"><br><br>
 	        <b>관람가능 인원</b>
-	        <input type="number" name="max_count" size="50"><br><br>
+	        	<input type="number" name="max_count" size="50"><br><br>
 	        <b>내 용</b>
-	        <p>필수 입력 사항 *관람연령 *공연시간 </p>
-	        <textarea rows="10" cols="50" name="content"></textarea><br><br>
+	        	<p>필수 입력 사항 *관람연령 *공연시간 </p>
+	        	<textarea rows="10" cols="50" name="content"></textarea><br><br>
 	        <b>연락처</b>
-	        <p> - 를 포함한 13자리 숫자를 입력해 주세요</p>
-	        <input type="text" name="tel" placeholder="ex) 010-0000-0000"><br><br>
+	        	<p> - 를 포함한 13자리 숫자를 입력해 주세요</p>
+	        	<input type="text" name="tel" placeholder="ex) 010-0000-0000"><br><br>
 	        <b>생각하는 티켓가격</b>
-	        <input type="text" name="price" size="50">원<br><br>
+	        	<input type="text" name="price" size="50">원<br><br>
 			<b>공연팀인원</b>
-	        <input type="number" min="0" max="100" name="team_count"/>      
+	        	<input type="number" min="0" max="100" name="team_count"/>      
 	        <br><br>
-	        <input type="submit" value="제출하기">   
+	        	<input type="submit" value="제출하기">   
 		 </form>
 		 <button type="button" onclick="location.href='../member/myinfo2?id=${loginUser}'">돌아가기</button>
    </div>

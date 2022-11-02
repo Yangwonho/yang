@@ -82,8 +82,7 @@ public class ReservationServiceImpl implements ReservationService{
 	
 	@Override
 	public void reservationView(int write_no, Model model) {
-		model.addAttribute("data", mapper.reservationView(write_no));
-		
+		model.addAttribute("data", mapper.reservationView(write_no));	
 	}
 	
 	

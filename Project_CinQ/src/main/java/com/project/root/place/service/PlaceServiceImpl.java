@@ -174,7 +174,22 @@ public class PlaceServiceImpl implements PlaceService{
 			model.addAttribute("repeat", repeat);
 			model.addAttribute("rentOkList",mapper.rentOkPlace(start, end));
 	}
-		 
+	
+	@Override
+	public void RentOkPlaceView(Model model, int num, String register_no) {
+		int pageLetter = 1;// 한 페이지 당 글 목록수
+		int allCount = mapper.selectPlaceCount();// 전체 글수
+		int repeat = allCount/pageLetter;
+		if(allCount % pageLetter != 0)
+			repeat += 1;
+			int end = num * pageLetter;
+			int start = end + 1 - pageLetter;
+			model.addAttribute("repeat", repeat);
+			model.addAttribute("rentOkList",mapper.rentOkPlace(start, end));
+			model.addAttribute("register_no", register_no);
+	}
+	
+	
 	 
 }
 	

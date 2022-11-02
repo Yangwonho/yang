@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.project.root.join.service.JoinFileService;
 import com.project.root.join.service.JoinService;
 import com.project.root.place.service.PlaceService;
+import com.project.root.reservation.service.ReservationFileServiceImpl;
 import com.project.root.reservation.service.ReservationService;
 import com.project.root.session.name.MemberSession;
 
@@ -34,7 +35,7 @@ public class ReservationController implements MemberSession {
 	
 	@Autowired
 	private ReservationService rs;
-	 
+	
 
 	@RequestMapping("reservationForm")
 	public  String reservationForm(Model model, @RequestParam(value = "write_no", required = false)String write_no) {
@@ -84,18 +85,18 @@ public class ReservationController implements MemberSession {
 	 	public  void delete(@RequestParam int write_no, @RequestParam String imageFileName, 
 											HttpServletResponse response,
 											HttpServletRequest request) throws Exception {
-
+		 	
 			String message = rs.reservationDelete(write_no, imageFileName, request);
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();
 			out.println(message);
 		}
-	@GetMapping("ticketingRegister")
+	@RequestMapping("ticketingRegister")
 		public  String modify_form(@RequestParam int write_no, Model model) {
 			rs.reservationView(write_no, model);
 			return "reservation/ticketingRegister";
-		
-		}
+		} 
+		 
 	
 	@PostMapping("ticketingStart")
 	public void modify(MultipartHttpServletRequest mul, 

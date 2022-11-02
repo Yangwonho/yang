@@ -54,7 +54,6 @@ public class PlaceController implements MemberSession{
 			FileInputStream in = new FileInputStream(file);
 			FileCopyUtils.copy(in, response.getOutputStream());
 			in.close();
-	 
 	 }
 	 
 	 @GetMapping("placeAllListNum")
@@ -107,10 +106,15 @@ public class PlaceController implements MemberSession{
 			 return "place/placeSearchList";
 		}
 	 @RequestMapping("rentOkPlaceView")
-	 	public String rentOkPlaceView(Model model, @RequestParam(value = "num", required = false, defaultValue="1") int num) {
-		 	ps.RentOkPlaceView(model, num);
+	 public String rentOkPlaceView(Model model,@RequestParam(value = "register_no", required = false) String register_no ,@RequestParam(value = "num", required = false, defaultValue="1") int num) {
+		 if(register_no == null) {
+			 ps.RentOkPlaceView(model, num);
+			 return "place/rentOkPlaceView";
+		 }
+		 	ps.RentOkPlaceView(model, num, register_no);
 		 	return "place/rentOkPlaceView";
-	 	}
+		 
+	 }
 
 }
 
