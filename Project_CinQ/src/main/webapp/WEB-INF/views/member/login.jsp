@@ -34,7 +34,9 @@
                     </div>
                     <div class="group">
                          <input type="submit" class="button" value="Sign In">
-                    </div>
+                         <br>
+                         <input type="button" class="button" onclick="location.href='${contextPath}/member/findPWD'" value="비밀번호 찾기">
+					</div>
                     <div class="hr"><br></div>
                  </form>
                </div>

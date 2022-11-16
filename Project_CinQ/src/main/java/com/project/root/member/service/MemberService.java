@@ -12,6 +12,7 @@ public interface MemberService {
 	int register(MemberDTO member);
 	public int user_check(HttpServletRequest request);
 	public int idCheck(String string);
+	public int emailCheck(String id, String email);
 	public String modify(MultipartHttpServletRequest mul, HttpServletRequest request);
 	public void info(String id, Model model);
 	public String getMessage(HttpServletRequest request, String msg, String url);

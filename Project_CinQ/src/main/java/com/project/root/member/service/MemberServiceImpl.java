@@ -36,6 +36,14 @@ public class MemberServiceImpl implements MemberService {
       }
       return 1;
    }
+   public int emailCheck(String id, String email) {
+	  MemberDTO dto = mapper.email_check(id,email);
+	  if(dto != null) {
+		  return 0;
+	  }
+	  return 1;
+   }
+   
    
    @Override
    public int user_check(HttpServletRequest request) {

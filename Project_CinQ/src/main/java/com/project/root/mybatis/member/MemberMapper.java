@@ -15,4 +15,5 @@ public interface MemberMapper {
 	public int delete(String id);
 	public int selectMemberCount();
     public List<MemberDTO> memberAllList(@Param("s")int start, @Param("e") int end);
+	public MemberDTO email_check(@Param("id")String id, @Param("email")String email);
 }

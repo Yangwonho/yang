@@ -74,6 +74,14 @@ public class MemberController implements MemberSession {
 		int cnt = ms.idCheck(id);
 		return cnt;
 	}
+	@PostMapping("emailCheck")
+	@ResponseBody
+	public int emailCheck(@RequestParam("id") String id, @RequestParam("email") String email) {
+		int cnt = ms.emailCheck(id ,email);
+		return cnt;
+	}
+	
+	
 	
 	@PostMapping("user_check")
 	public String userCheck(HttpServletRequest request, RedirectAttributes rs) {
@@ -169,6 +177,10 @@ public class MemberController implements MemberSession {
 		return "admin/memberDeleteSuccess";
 	}
 	
+	@GetMapping("findPWD")
+	public String findPWD(){
+		return "member/findPWD";
+	}
 	
 	
 }
