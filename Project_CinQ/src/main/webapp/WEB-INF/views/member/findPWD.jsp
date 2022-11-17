@@ -21,14 +21,14 @@
 			<div class="findPWD-form">
 				<form action="${contextPath }/member/PWD_check" method="post" autocomplete="off">
 					<div class="group">
-						<label for="id" class="label">Id</label>
+						<label for="id" class="label" id="Id">ID</label>
 						<input id="id" name="id" type="text" class="input" onkeyup="javascript:checkID()" onblur="javascript:checkID()">
 							<label class="labelFail" id="idLabel1" for="id" >없는 아이디 입니다</label>
 							<label class="labelFail" id="idLabel2" for="id"> 아이디를 입력하세요! </label>
 		               		<label class="labelOK" id="idLabel3" for="id"> 아이디 확인완료 </label>
 					</div>
 					<div class="group">
-						<label for="email" class="label">E-mail</label>
+						<label for="email" class="label" id="E-mail">E-mail</label>
 						<input id="email" name="email" type="text" class="input" onkeyup="javascript:checkEmail()" onblur="javascript:checkEmail()">
 							<label class="labelFail" id="emailLabel1" for="email" >일치하지 않는 이메일입니다</label>
 							<label class="labelFail" id="emailLabel2" for="email"> 이메일을 입력하세요! </label>
@@ -36,7 +36,7 @@
 						<br>
 					</div>
 					<div class="group">
-						<input type="submit" class="button" value="비밀번호 찾기">
+						<input type="submit" class="button" value="비밀번호 이메일로 보내기">
 					</div>
 					<div class="hr"><br></div>
 				</form>
